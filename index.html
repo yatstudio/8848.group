@@ -4,111 +4,127 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>8848.Group</title>
-  <meta name="description" content="8848.Group - Brand, Operations, Capital" />
+  <meta name="description" content="8848.Group - Global Holding Platform for Brand, Operations, and Capital" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-shell"></div>
-  <div class="bg-glow glow-a"></div>
-  <div class="bg-glow glow-b"></div>
-  <div class="noise"></div>
+  <div class="veil"></div>
+  <div class="halo halo-left"></div>
+  <div class="halo halo-right"></div>
+  <div class="grain"></div>
 
-  <header class="topbar">
-    <div class="brand">8848.<span>Group</span></div>
-    <nav>
-      <a href="#business" data-i18n="navBusiness">业务</a>
-      <a href="#strategy" data-i18n="navStrategy">战略</a>
-      <a href="#contact" data-i18n="navContact">联系</a>
-    </nav>
-    <button id="lang-toggle" class="lang-btn" type="button" aria-label="切换语言 / Toggle language">EN</button>
+  <header class="nav-shell">
+    <div class="nav-inner">
+      <div class="logo">8848<span>.GROUP</span></div>
+      <nav>
+        <a href="#portfolio" data-i18n="navPortfolio">业务组合</a>
+        <a href="#platform" data-i18n="navPlatform">平台能力</a>
+        <a href="#contact" data-i18n="navContact">联系</a>
+      </nav>
+      <button id="lang-toggle" class="lang-btn" type="button" aria-label="切换语言 / Toggle language">EN</button>
+    </div>
   </header>
 
   <main>
-    <section class="hero section">
-      <p class="kicker reveal" data-i18n="heroKicker">8848 GROUP</p>
-      <h1 class="reveal" data-i18n="heroTitle">以品牌为矛，以运营为盾，以资本放大增长。</h1>
-      <p class="lead reveal" data-i18n="heroLead">
-        在消费与产业交汇处，我们打造可持续的商业系统，而不是短期热点。
+    <section class="hero container">
+      <p class="overline reveal" data-i18n="heroOverline">PRIVATE HOLDING PLATFORM</p>
+      <h1 class="reveal" data-i18n="heroTitle">为长期主义企业，打造通往百亿美金估值的增长平台。</h1>
+      <p class="hero-copy reveal" data-i18n="heroCopy">
+        8848.Group 连接品牌、运营与资本，以系统化能力推动业务持续增长，并构建跨周期竞争力。
       </p>
-      <div class="hero-actions reveal">
-        <a class="btn prime" href="#business" data-i18n="heroBtnMain">查看业务版图</a>
-        <a class="btn ghost" href="#strategy" data-i18n="heroBtnAlt">了解方法论</a>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#portfolio" data-i18n="heroBtnPrimary">查看业务组合</a>
+        <a class="btn btn-secondary" href="#platform" data-i18n="heroBtnSecondary">查看平台能力</a>
       </div>
-      <div class="hero-metrics reveal">
+      <div class="hero-stat reveal">
         <div>
-          <p class="num">06</p>
-          <p data-i18n="metricUnits">核心业务单元</p>
+          <p class="metric">06</p>
+          <p data-i18n="metricBusiness">核心业务单元</p>
         </div>
         <div>
-          <p class="num">01</p>
-          <p data-i18n="metricSystem">统一增长系统</p>
+          <p class="metric">03</p>
+          <p data-i18n="metricEngines">增长引擎</p>
+        </div>
+        <div>
+          <p class="metric">01</p>
+          <p data-i18n="metricPlatform">控股平台</p>
         </div>
       </div>
     </section>
 
-    <section id="business" class="business section">
+    <section id="portfolio" class="portfolio container">
       <div class="section-head reveal">
-        <p data-i18n="businessKicker">BUSINESS MATRIX</p>
-        <h2 data-i18n="businessTitle">业务矩阵</h2>
+        <p data-i18n="portfolioOverline">PORTFOLIO</p>
+        <h2 data-i18n="portfolioTitle">多业务协同，不做单点波动。</h2>
       </div>
-      <div class="grid">
-        <article class="panel reveal">
-          <p class="index">01</p>
+
+      <div class="portfolio-grid">
+        <article class="card reveal">
+          <p class="num">01</p>
           <h3>8848.Coffee</h3>
-          <p data-i18n="coffeeDesc">精品咖啡品牌运营，覆盖产品研发、空间体验与区域增长复制。</p>
+          <p data-i18n="coffeeDesc">精品咖啡品牌运营，围绕产品、空间和区域复制形成稳健增长。</p>
         </article>
-        <article class="panel reveal">
-          <p class="index">02</p>
+        <article class="card reveal">
+          <p class="num">02</p>
           <h3>8848.Studio</h3>
-          <p data-i18n="studioDesc">会务业务与活动执行，从内容策划到现场交付的一体化服务。</p>
+          <p data-i18n="studioDesc">会务与活动业务，从策略到执行，交付高质量商业场景。</p>
         </article>
-        <article class="panel reveal">
-          <p class="index">03</p>
+        <article class="card reveal">
+          <p class="num">03</p>
           <h3 data-i18n="incubationTitle">投资孵化</h3>
-          <p data-i18n="incubationDesc">以产业协同为核心，投资并孵化具备长期价值与现金流能力的项目。</p>
+          <p data-i18n="incubationDesc">围绕产业链上下游做投资孵化，提升组合韧性与长期回报能力。</p>
         </article>
-        <article class="panel reveal">
-          <p class="index">04</p>
+        <article class="card reveal">
+          <p class="num">04</p>
           <h3>openclaw.mom</h3>
-          <p data-i18n="momDesc">龙虾妈妈业务，连接产品、渠道和口碑，实现品牌增长闭环。</p>
+          <p data-i18n="momDesc">龙虾妈妈业务，打通产品、渠道与口碑，放大品牌势能。</p>
         </article>
-        <article class="panel reveal">
-          <p class="index">05</p>
+        <article class="card reveal">
+          <p class="num">05</p>
           <h3>8848.buzz</h3>
-          <p data-i18n="buzzDesc">AI 新闻业务，聚焦高价值资讯筛选、聚合与传播。</p>
+          <p data-i18n="buzzDesc">AI 新闻业务，提供高信噪比资讯筛选、聚合与传播。</p>
         </article>
-        <article class="panel reveal">
-          <p class="index">06</p>
+        <article class="card reveal">
+          <p class="num">06</p>
           <h3>8848.fund</h3>
-          <p data-i18n="fundDesc">基金业务，围绕产业升级进行资本配置与长期价值管理。</p>
+          <p data-i18n="fundDesc">基金业务，以产业认知驱动资本配置，服务长期价值创造。</p>
         </article>
       </div>
     </section>
 
-    <section id="strategy" class="strategy section reveal">
-      <p class="kicker" data-i18n="strategyKicker">OPERATING THESIS</p>
-      <h2 data-i18n="strategyTitle">我们不是做单点项目，而是搭建增长引擎。</h2>
-      <div class="strategy-list">
-        <p data-i18n="s1">品牌：定位与叙事，让业务被记住。</p>
-        <p data-i18n="s2">运营：流程与交付，让结果可复制。</p>
-        <p data-i18n="s3">资本：投资与孵化，让价值被放大。</p>
+    <section id="platform" class="platform container reveal">
+      <p class="overline" data-i18n="platformOverline">PLATFORM CAPABILITIES</p>
+      <h2 data-i18n="platformTitle">品牌、运营、资本三位一体，形成可复用的增长基础设施。</h2>
+      <div class="pillars">
+        <div>
+          <h4 data-i18n="pillar1Title">Brand Architecture</h4>
+          <p data-i18n="pillar1Desc">统一品牌系统与叙事框架，提升市场认知与资产溢价。</p>
+        </div>
+        <div>
+          <h4 data-i18n="pillar2Title">Operational Excellence</h4>
+          <p data-i18n="pillar2Desc">通过标准化运营体系，实现高质量交付和规模化复制。</p>
+        </div>
+        <div>
+          <h4 data-i18n="pillar3Title">Capital Allocation</h4>
+          <p data-i18n="pillar3Desc">以产业洞察指导资本配置，强化现金流与长期回报表现。</p>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="contact section reveal">
-      <p class="kicker">8848.GROUP</p>
-      <h2 data-i18n="contactTitle">让下一次增长，发生在同一张桌子上。</h2>
-      <p data-i18n="contactDesc">可通过 GitHub 与我们保持同步，后续可扩展为完整品牌官网。</p>
-      <a class="btn prime" href="https://github.com/yatstudio/8848.group" target="_blank" rel="noopener">GitHub</a>
+    <section id="contact" class="contact container reveal">
+      <p class="overline">8848.GROUP</p>
+      <h2 data-i18n="contactTitle">与 8848.Group 一起，定义下一阶段增长曲线。</h2>
+      <p data-i18n="contactDesc">当前官网已上线 GitHub，可继续升级为完整集团门户与多页面站点。</p>
+      <a class="btn btn-primary" href="https://github.com/yatstudio/8848.group" target="_blank" rel="noopener">GitHub</a>
     </section>
   </main>
 
-  <footer class="footer reveal">
+  <footer class="footer container reveal">
     <p>© <span id="year"></span> 8848.Group</p>
-    <p data-i18n="footerLine">Build Bold. Scale Real.</p>
+    <p data-i18n="footerLine">Built for Enduring Enterprise Value.</p>
   </footer>
 
   <script src="script.js"></script>
