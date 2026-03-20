@@ -216,6 +216,71 @@ nav a:hover {
   color: var(--muted);
 }
 
+.peak-visual {
+  margin-top: 2.2rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  padding: 1rem;
+  max-width: 900px;
+}
+
+.peak-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid rgba(216, 176, 103, 0.5);
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+
+.peak-num {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+.peak-unit {
+  margin: 0;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.peak-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ridge-main,
+.ridge-sub {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ridge-main {
+  stroke: rgba(216, 176, 103, 0.95);
+  stroke-width: 4.2;
+}
+
+.ridge-sub {
+  stroke: rgba(255, 255, 255, 0.42);
+  stroke-width: 2.2;
+}
+
+.summit-line {
+  stroke: rgba(216, 176, 103, 0.9);
+  stroke-width: 1.6;
+}
+
+.summit-dot {
+  fill: rgba(216, 176, 103, 1);
+}
+
 .portfolio,
 .platform,
 .contact {
@@ -355,6 +420,10 @@ nav a:hover {
 
   .portfolio-grid {
     grid-template-columns: 1fr;
+  }
+
+  .peak-unit {
+    letter-spacing: 0.04em;
   }
 }
 
