@@ -162,11 +162,11 @@ nav a:hover {
 }
 
 .hero {
-  min-height: 92vh;
+  min-height: 88vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5.3rem 0 4.2rem;
+  padding: 5.3rem 0 3.2rem;
 }
 
 .overline {
@@ -243,7 +243,7 @@ nav a:hover {
 }
 
 .hero-stat {
-  margin-top: 2.6rem;
+  margin-top: 2.2rem;
   padding: 1rem 1.2rem;
   border: 1px solid var(--line-soft);
   display: grid;
@@ -266,75 +266,6 @@ nav a:hover {
 .hero-stat p {
   margin: 0.2rem 0 0;
   color: var(--muted);
-}
-
-.peak-visual {
-  margin-top: 2.2rem;
-  border: 1px solid var(--line-soft);
-  border-radius: 8px;
-  background: var(--surface-glass);
-  backdrop-filter: blur(18px);
-  padding: 1rem;
-  max-width: 900px;
-  box-shadow: var(--tech-shadow);
-}
-
-.peak-badge {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  padding: 0.35rem 0.65rem;
-  border: 1px solid rgba(0, 218, 243, 0.58);
-  border-radius: 4px;
-  margin-bottom: 0.8rem;
-  background: rgba(0, 218, 243, 0.08);
-}
-
-.peak-num {
-  margin: 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.2rem;
-  color: var(--cyan-soft);
-}
-
-.peak-unit {
-  margin: 0;
-  font-size: 0.76rem;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-
-.peak-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.ridge-main,
-.ridge-sub {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.ridge-main {
-  stroke: rgba(0, 218, 243, 0.95);
-  stroke-width: 4.2;
-}
-
-.ridge-sub {
-  stroke: rgba(195, 245, 255, 0.46);
-  stroke-width: 2.2;
-}
-
-.summit-line {
-  stroke: rgba(0, 218, 243, 0.9);
-  stroke-width: 1.6;
-}
-
-.summit-dot {
-  fill: rgba(0, 218, 243, 1);
 }
 
 .portfolio,
@@ -365,13 +296,14 @@ nav a:hover {
 }
 
 .portfolio-grid {
-  margin-top: 1.6rem;
+  margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .card {
+  grid-column: span 3;
   min-height: 220px;
   border-radius: 6px;
   border: 1px solid var(--line-soft);
@@ -380,6 +312,10 @@ nav a:hover {
   backdrop-filter: blur(16px);
   padding: 1.35rem;
   transition: border-color 0.28s ease, transform 0.28s ease, background-color 0.28s ease;
+}
+
+.card:nth-child(-n+3) {
+  grid-column: span 4;
 }
 
 .card:hover {
@@ -477,6 +413,11 @@ nav a:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .card,
+  .card:nth-child(-n+3) {
+    grid-column: auto;
+  }
+
   .pillars {
     grid-template-columns: 1fr;
   }
@@ -498,10 +439,6 @@ nav a:hover {
 
   .portfolio-grid {
     grid-template-columns: 1fr;
-  }
-
-  .peak-unit {
-    letter-spacing: 0.04em;
   }
 }
 
