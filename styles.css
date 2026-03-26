@@ -1,12 +1,16 @@
 :root {
-  --bg: #06080f;
-  --bg-soft: #0d1320;
-  --gold: #d8b067;
-  --steel: #90a4c0;
-  --text: #eef1f7;
-  --muted: #9ea8b7;
-  --line: rgba(255, 255, 255, 0.14);
-  --card: rgba(13, 20, 33, 0.76);
+  --bg: #0b1326;
+  --bg-soft: #131b2e;
+  --surface: #171f33;
+  --surface-high: rgba(45, 52, 73, 0.56);
+  --surface-glass: rgba(19, 27, 46, 0.48);
+  --cyan: #00daf3;
+  --cyan-soft: #9cf0ff;
+  --text: #dae2fd;
+  --muted: #a7b6cc;
+  --line: rgba(132, 147, 150, 0.34);
+  --line-soft: rgba(132, 147, 150, 0.2);
+  --tech-shadow: 0 24px 64px rgba(0, 218, 243, 0.08);
 }
 
 * {
@@ -20,14 +24,22 @@ body {
 }
 
 body {
-  font-family: "Manrope", "Noto Sans SC", sans-serif;
+  font-family: "Inter", "Noto Sans SC", sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at 8% -12%, #21395d 0%, transparent 34%),
-    radial-gradient(circle at 92% 0%, #2a3242 0%, transparent 30%),
-    linear-gradient(180deg, var(--bg) 0%, #05070c 100%);
+  background: var(--bg);
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+.summit-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  background:
+    linear-gradient(to bottom, rgba(11, 19, 38, 0.2) 0%, rgba(11, 19, 38, 0.6) 52%, rgba(11, 19, 38, 1) 100%),
+    url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTPtFpkvSlwkDSgtDIJnB1AtJDowGrucSFl7wMPquVqrYliKzATXnynznIpZBH_WgceI_QvKq4Uvion3hZNNocf5Va_rOaHuvp6taEfUpMra94x9qoLLAKDVmP4B59iEf9mY0c2bMz5fLLJnXoqruKJVfsRIHr3FbFN4EffVe2mW5t1ie48i98btxBwxivhj52lQUAxpDvTebxijbR8RiaI72KjLKG7lXqfnOxPMzBmIOl0dX-dzv9vVsH4-TeGhiIJ4egIxMVYw")
+      center/cover no-repeat;
+  filter: grayscale(92%) brightness(0.42) contrast(1.12);
 }
 
 .veil,
@@ -40,14 +52,15 @@ body {
 
 .veil {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(circle at center, black 14%, transparent 74%);
+    linear-gradient(rgba(59, 73, 76, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 73, 76, 0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -3;
 }
 
 .halo {
-  filter: blur(95px);
+  filter: blur(90px);
+  z-index: -2;
 }
 
 .halo-left {
@@ -56,7 +69,7 @@ body {
   left: -130px;
   top: -140px;
   border-radius: 999px;
-  background: rgba(216, 176, 103, 0.2);
+  background: rgba(0, 218, 243, 0.26);
 }
 
 .halo-right {
@@ -65,11 +78,12 @@ body {
   right: -130px;
   bottom: -150px;
   border-radius: 999px;
-  background: rgba(128, 164, 216, 0.18);
+  background: rgba(156, 240, 255, 0.22);
 }
 
 .grain {
-  opacity: 0.06;
+  z-index: -1;
+  opacity: 0.05;
   background-image: radial-gradient(rgba(255, 255, 255, 0.92) 0.55px, transparent 0.55px);
   background-size: 4px 4px;
 }
@@ -85,9 +99,10 @@ body {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(10px);
-  background: linear-gradient(to bottom, rgba(6, 8, 15, 0.82), rgba(6, 8, 15, 0.34));
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  background: linear-gradient(to bottom, rgba(11, 19, 38, 0.76), rgba(11, 19, 38, 0.3));
+  border-bottom: 1px solid var(--line-soft);
+  box-shadow: 0 20px 40px rgba(0, 229, 255, 0.05);
 }
 
 .nav-inner {
@@ -101,14 +116,15 @@ body {
 }
 
 .logo {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 0.06em;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.08em;
   font-weight: 700;
-  font-size: clamp(1.2rem, 2.5vw, 1.95rem);
+  font-size: clamp(1.02rem, 2.3vw, 1.35rem);
+  text-transform: uppercase;
 }
 
 .logo span {
-  color: var(--gold);
+  color: var(--cyan-soft);
 }
 
 nav {
@@ -119,20 +135,29 @@ nav {
 nav a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.93rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.2rem 0.42rem;
+  transition: color 0.25s ease, background-color 0.25s ease;
 }
 
 nav a:hover {
-  color: var(--text);
+  color: var(--cyan-soft);
+  background: rgba(0, 218, 243, 0.1);
 }
 
 .lang-btn {
-  border: 1px solid rgba(216, 176, 103, 0.44);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text);
-  border-radius: 999px;
+  border: 1px solid rgba(0, 218, 243, 0.44);
+  background: rgba(0, 218, 243, 0.08);
+  color: #001f24;
+  border-radius: 5px;
   padding: 0.52rem 0.92rem;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
@@ -146,26 +171,35 @@ nav a:hover {
 
 .overline {
   margin: 0 0 1rem;
-  font-size: 0.73rem;
-  letter-spacing: 0.23em;
-  color: var(--gold);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.27em;
+  color: var(--cyan);
+  text-transform: uppercase;
 }
 
 .hero h1 {
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: clamp(2.4rem, 6.6vw, 6rem);
-  line-height: 1.03;
-  max-width: 12em;
+  text-transform: uppercase;
+  font-size: clamp(2.2rem, 6.8vw, 6.2rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  max-width: 11.5em;
+  background: linear-gradient(125deg, #dae2fd 0%, #9cf0ff 58%, #00daf3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .hero-copy {
   margin: 1.4rem 0 0;
   max-width: 760px;
   color: var(--muted);
-  font-size: clamp(1.03rem, 2vw, 1.24rem);
-  line-height: 1.9;
+  font-size: clamp(0.96rem, 1.6vw, 1.08rem);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
 }
 
 .hero-cta {
@@ -177,38 +211,56 @@ nav a:hover {
 
 .btn {
   text-decoration: none;
-  border-radius: 999px;
-  padding: 0.84rem 1.25rem;
+  border-radius: 6px;
+  padding: 0.86rem 1.26rem;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.76rem;
   display: inline-block;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 .btn-primary {
-  background: linear-gradient(130deg, var(--gold), #f2d39b);
-  color: #121722;
+  background: linear-gradient(135deg, #c3f5ff 0%, #00daf3 100%);
+  color: #001f24;
+  box-shadow: var(--tech-shadow);
 }
 
 .btn-secondary {
   color: var(--text);
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line-soft);
+  background: rgba(45, 52, 73, 0.46);
+}
+
+.btn-secondary:hover {
+  background: rgba(45, 52, 73, 0.7);
 }
 
 .hero-stat {
   margin-top: 2.6rem;
-  padding-top: 1.3rem;
-  border-top: 1px solid var(--line);
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--line-soft);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   max-width: 760px;
+  background: var(--surface-glass);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--tech-shadow);
 }
 
 .metric {
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
-  color: var(--steel);
+  color: var(--cyan-soft);
+  letter-spacing: 0.06em;
 }
 
 .hero-stat p {
@@ -218,11 +270,13 @@ nav a:hover {
 
 .peak-visual {
   margin-top: 2.2rem;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  background: var(--surface-glass);
+  backdrop-filter: blur(18px);
   padding: 1rem;
   max-width: 900px;
+  box-shadow: var(--tech-shadow);
 }
 
 .peak-badge {
@@ -230,16 +284,17 @@ nav a:hover {
   align-items: baseline;
   gap: 0.5rem;
   padding: 0.35rem 0.65rem;
-  border: 1px solid rgba(216, 176, 103, 0.5);
-  border-radius: 999px;
+  border: 1px solid rgba(0, 218, 243, 0.58);
+  border-radius: 4px;
   margin-bottom: 0.8rem;
+  background: rgba(0, 218, 243, 0.08);
 }
 
 .peak-num {
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 1.2rem;
-  color: var(--gold);
+  color: var(--cyan-soft);
 }
 
 .peak-unit {
@@ -247,6 +302,7 @@ nav a:hover {
   font-size: 0.76rem;
   letter-spacing: 0.08em;
   color: var(--muted);
+  text-transform: uppercase;
 }
 
 .peak-svg {
@@ -263,22 +319,22 @@ nav a:hover {
 }
 
 .ridge-main {
-  stroke: rgba(216, 176, 103, 0.95);
+  stroke: rgba(0, 218, 243, 0.95);
   stroke-width: 4.2;
 }
 
 .ridge-sub {
-  stroke: rgba(255, 255, 255, 0.42);
+  stroke: rgba(195, 245, 255, 0.46);
   stroke-width: 2.2;
 }
 
 .summit-line {
-  stroke: rgba(216, 176, 103, 0.9);
+  stroke: rgba(0, 218, 243, 0.9);
   stroke-width: 1.6;
 }
 
 .summit-dot {
-  fill: rgba(216, 176, 103, 1);
+  fill: rgba(0, 218, 243, 1);
 }
 
 .portfolio,
@@ -289,18 +345,22 @@ nav a:hover {
 
 .section-head p {
   margin: 0;
-  color: var(--gold);
+  color: var(--cyan);
   letter-spacing: 0.18em;
-  font-size: 0.73rem;
+  font-size: 0.68rem;
+  font-family: "Space Grotesk", sans-serif;
+  text-transform: uppercase;
 }
 
 .section-head h2,
 .platform h2,
 .contact h2 {
   margin: 0.6rem 0 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: clamp(1.8rem, 4.5vw, 3.7rem);
-  line-height: 1.14;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
   max-width: 18ch;
 }
 
@@ -313,22 +373,34 @@ nav a:hover {
 
 .card {
   min-height: 220px;
-  border-radius: 18px;
-  border: 1px solid var(--line);
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.05), transparent 52%), var(--card);
+  border-radius: 6px;
+  border: 1px solid var(--line-soft);
+  border-top: 1px solid transparent;
+  background: var(--surface-glass);
+  backdrop-filter: blur(16px);
   padding: 1.35rem;
+  transition: border-color 0.28s ease, transform 0.28s ease, background-color 0.28s ease;
+}
+
+.card:hover {
+  border-top-color: rgba(0, 218, 243, 0.92);
+  background: var(--surface-high);
+  transform: translateY(-2px);
 }
 
 .card .num {
   margin: 0;
-  font-family: "Playfair Display", serif;
-  color: var(--gold);
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--cyan-soft);
+  letter-spacing: 0.13em;
 }
 
 .card h3 {
   margin: 0.35rem 0 0.55rem;
-  font-family: "Playfair Display", serif;
-  font-size: 1.44rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.36rem;
+  line-height: 1.08;
+  text-transform: uppercase;
 }
 
 .card p {
@@ -338,8 +410,10 @@ nav a:hover {
 }
 
 .platform {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  background: rgba(6, 14, 32, 0.36);
+  backdrop-filter: blur(12px);
 }
 
 .pillars {
@@ -350,16 +424,18 @@ nav a:hover {
 }
 
 .pillars div {
-  border: 1px solid var(--line);
-  border-radius: 16px;
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(45, 52, 73, 0.34);
+  backdrop-filter: blur(12px);
 }
 
 .pillars h4 {
   margin: 0;
-  font-family: "Playfair Display", serif;
-  font-size: 1.24rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.18rem;
+  text-transform: uppercase;
 }
 
 .pillars p,
@@ -370,12 +446,14 @@ nav a:hover {
 }
 
 .footer {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-soft);
   padding: 1rem 0 2.1rem;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  background: rgba(6, 14, 32, 0.46);
+  backdrop-filter: blur(8px);
 }
 
 .footer p {
